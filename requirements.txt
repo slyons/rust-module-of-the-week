@@ -1,0 +1,6 @@
+Markdown==2.4
+pelican==3.5
+feedgenerator==1.7
+webassets
+cssmin==0.2.0
+jinja2==2.11.3

@@ -1,0 +1,3 @@
+[submodule "themes/pelican-rusted-theme"]
+	path = themes/pelican-rusted-theme
+	url = https://github.com/slyons/pelican-rusted-theme

@@ -5,8 +5,9 @@ import os
 
 AUTHOR = u'RMOTW Contributors'
 SITENAME = u"Rust Module of the Week"
-SITEURL = 'https://slyons.github.io/rust-module-of-the-week'
+SITEURL = 'https://motw.rs'
 SOURCE_URL = 'https://github.com/slyons/rust-module-of-the-week'
+GITHUB_URL = SOURCE_URL
 
 RELATIVE_URLS= True
 

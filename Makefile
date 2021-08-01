@@ -72,9 +72,9 @@ endif
 
 devserver:
 ifdef PORT
-	$(BASEDIR)/scripts/develop_server.sh restart $(PORT)
+	$(BASEDIR)/../develop_server.sh restart $(PORT)
 else
-	$(BASEDIR)/scripts/develop_server.sh restart
+	$(BASEDIR)/../develop_server.sh restart
 endif
 
 stopserver:
@@ -85,7 +85,7 @@ stopserver:
 dockerserve:
 	docker run --rm -it --name modweek -p8999:8000 \
 		-v $(PWD):/home/app/pdock \
-		slyons/pelican-docker:latest make devserver
+		slyons/pelican-docker:latest
 
 dockerpub:
 	docker run --rm -it --name modweek -p8999:8000 \

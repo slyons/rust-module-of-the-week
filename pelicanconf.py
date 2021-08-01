@@ -5,14 +5,15 @@ import os
 
 AUTHOR = u'RMOTW Contributors'
 SITENAME = u"Rust Module of the Week"
-#SITEURL = 'https://this-week-in-rust.org'
-SITEURL = "http://localhost:8000"
+SITEURL = 'https://slyons.github.io/rust-module-of-the-week/'
 SOURCE_URL = 'https://github.com/slyons/rust-module-of-the-week'
+
+RELATIVE_URLS= True
 
 THEME = 'themes/pelican-rusted-theme'
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ['assets', 'neighbors']
+PLUGINS = ['webassets', 'neighbors', 'series']
 
 TIMEZONE = 'America/New_York'
 
@@ -22,8 +23,8 @@ FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'atom.xml'
 FEED_ALL_RSS = 'rss.xml'
 FEED_MAX_ITEMS = 4
-CATEGORY_FEED_ATOM = 'categories/%s/atom.xml'
-CATEGORY_FEED_RSS = 'categories/%s/rss.xml'
+CATEGORY_FEED_ATOM = 'categories/{slug}/atom.xml'
+CATEGORY_FEED_RSS = 'categories/{slug}/rss.xml'
 
 DEFAULT_PAGINATION = 10
 
@@ -43,9 +44,12 @@ try to solve their problems using the most commonly used modules available to Ru
 """
 }
 
-MD_EXTENSIONS = ['headerid',
-    'codehilite(css_class=highlight)',
-    'extra', 
-    'markdown.extensions.fenced_code',
-    'markdown.extensions.admonition',
-    ]
+MARKDOWN = {
+    "extension_configs": {
+        "markdown.extensions.codehilite": {"css_class":"highlight"},
+        "markdown.extensions.extra": {},
+        "markdown.extensions.fenced_code": {},
+        "markdown.extensions.admonition": {},
+    },
+    "output_format": "html5",
+}

@@ -14,7 +14,7 @@ RELATIVE_URLS= True
 THEME = 'themes/pelican-rusted-theme'
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ['webassets', 'neighbors', 'series']
+PLUGINS = ['webassets', 'neighbors', 'series', "liquid_tags", "show_source"]
 
 TIMEZONE = 'America/New_York'
 
@@ -44,6 +44,8 @@ A weekly dive into commonly used modules in the Rust ecosystem, with story flavo
 try to solve their problems using the most commonly used modules available to Rust.
 """
 }
+
+LIQUID_TAGS = ["include_code"]
 
 MARKDOWN = {
     "extension_configs": {

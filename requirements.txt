@@ -7,3 +7,5 @@ jinja2
 pelican-series==2.1.0
 pelican-neighbors
 pelican-webassets
+pelican-liquid-tags
+pelican-show-source

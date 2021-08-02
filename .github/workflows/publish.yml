@@ -3,6 +3,12 @@ name: Build RMOTW
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'content/**'
+      - 'themes/**'
+      - 'pelicanconf.py'
+      - 'publish.conf'
+      - 'requirements.txt'
 
 jobs:
   build:

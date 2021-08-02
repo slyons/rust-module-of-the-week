@@ -88,7 +88,7 @@ dockerserve:
 		slyons/pelican-docker:latest
 
 dockerpub:
-	docker run --rm -it --name modweek -p8999:8000 \
+	docker run --rm \
 		-v $(PWD):/home/app/pdock \
 		slyons/pelican-docker:latest make publish
 

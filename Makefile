@@ -92,6 +92,12 @@ dockerpub:
 		-v $(PWD):/home/app/pdock \
 		slyons/pelican-docker:latest make publish
 
+cargocheck:
+	cd rmotw && cargo check --all-targets --all-features
+
+cargoclippy:
+	cd rmotw && cargo clippy --all-targets --all-features
+
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 

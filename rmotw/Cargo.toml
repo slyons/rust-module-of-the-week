@@ -1,0 +1,10 @@
+[package]
+authors = ["Scott Lyons <scottalyons@gmail.com>"]
+description = "Rust module of the week, in code form!"
+name="rmotw"
+version="1.0.0"
+edition="2018"
+
+[dependencies]
+anyhow = "1.0.42"
+clap = { version = "2.33.3", features = ["yaml"] }

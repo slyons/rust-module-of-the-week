@@ -9,14 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: slyons/pelican-docker:latest
-      options: -v ${{ github.workspace }}:/home/app/pdock:rw
+
     steps:
-      - run: pwd && ls -l && cd /home/app/pdock
       - uses: actions/checkout@v2
         with:
           submodules: true
+
       - name: List files
         run: echo $PWD && ls -la
       - name: Build MOTW docs

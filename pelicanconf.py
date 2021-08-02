@@ -62,7 +62,14 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
+def make_rdoc(r):
+    link = "https://doc.rust-lang.org/stable/" + r.replace("::", "/")
+    if r.endswith(".html"):
+        return link
+    else:
+        return link + ".html"
+
 INTERLINKS = {
     'src' : SOURCE_URL+"/",
-    'rdoc': lambda r: "https://doc.rust-lang.org/stable/" + r.replace("::", "/") + ".html"
+    'rdoc': make_rdoc
 }

@@ -3,17 +3,16 @@ name: Check RMOTW draft
 on:
   push:
     branches: [ draft ]
-    paths:
-      - content/**
-      - themes/**
-      - pelicanconf.py
-      - publish.conf
-      - requirements.txt
+    paths-ignore:
+      - rmotw/**
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: true
+          depth: 10
       - name: Build MOTW docs
         run: make dockerpub

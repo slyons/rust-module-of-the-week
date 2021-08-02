@@ -1,4 +1,4 @@
-# Rust Module of the Week
+# [Rust Module of the Week](https://motw.rs)
 A weekly dive into commonly used modules in the Rust ecosystem, with story flavor!
 
 ## The goal

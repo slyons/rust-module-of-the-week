@@ -1,8 +1,8 @@
-name: Build RMOTW
+name: Check RMOTW draft
 
 on:
   push:
-    branches: [ main ]
+    branches: [ draft ]
     paths:
       - 'content/**'
       - 'themes/**'
@@ -17,5 +17,3 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build MOTW docs
       run: make dockerpub
-    - name: Publish docs
-      run: make github

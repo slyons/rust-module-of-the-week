@@ -3,8 +3,12 @@ name: Rust examples
 on:
   push:
     branches: [ draft ]
+    paths:
+      - 'rmotw/**'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'rmotw/**'
 
 env:
   CARGO_TERM_COLOR: always

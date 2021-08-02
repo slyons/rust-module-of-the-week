@@ -1,0 +1,15 @@
+name: Build RMOTW
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build MOTW docs
+      run: make dockerpub
+    - name: Publish docs
+      run: make github

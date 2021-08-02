@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: slyons/pelican-docker:latest
+      options: -v ${{ github.workspace }}:/home/app/pdock:rw
     steps:
-      - name : Chmod
-        run: sudo chmod -R a+rwx .
+      - run: pwd && ls -l
       - uses: actions/checkout@v2
         with:
           submodules: true

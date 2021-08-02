@@ -20,6 +20,10 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
+DEFAULT_METADATA = {
+    'status': 'draft',
+}
+
 FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'atom.xml'
 FEED_ALL_RSS = 'rss.xml'

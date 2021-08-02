@@ -13,7 +13,7 @@ jobs:
       image: slyons/pelican-docker:latest
     steps:
       - name : Chmod
-        run: chmod -R a+rwx .
+        run: sudo chmod -R a+rwx .
       - uses: actions/checkout@v2
         with:
           submodules: true

@@ -12,7 +12,7 @@ jobs:
     container:
       image: slyons/pelican-docker:latest
       volumes:
-        - $(GITHUB_WORKSPACE):/home/app/pdock
+        - $GITHUB_WORKSPACE:/home/app/pdock
     steps:
       - uses: actions/checkout@v2
         with:

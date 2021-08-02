@@ -12,7 +12,7 @@ jobs:
     container:
       image: slyons/pelican-docker:latest
     steps:
-      -name : Get environment
+      - name : Get environment
         run: env
       - uses: actions/checkout@v2
         with:

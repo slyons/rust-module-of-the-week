@@ -71,5 +71,6 @@ def make_rdoc(r):
 
 INTERLINKS = {
     'src' : SOURCE_URL+"/",
+    'example': SOURCE_URL+"/blob/main/rmotw/examples/",
     'rdoc': make_rdoc
 }

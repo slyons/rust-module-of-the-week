@@ -12,8 +12,8 @@ jobs:
     container:
       image: slyons/pelican-docker:latest
     steps:
-      - name : Get environment
-        run: env
+      - name : Chmod
+        run: chmod -R a+rwx .
       - uses: actions/checkout@v2
         with:
           submodules: true

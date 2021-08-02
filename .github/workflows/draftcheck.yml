@@ -18,4 +18,4 @@ jobs:
       - name: List files
         run: echo $PWD && ls -la
       - name: Build MOTW docs
-        run: docker run --rm -v $(PWD):/home/app/pdock:rw slyons/pelican-docker:latest ls -la && make publish
+        run: docker run --rm -v ${{ github.workspace }}:/home/app/pdock:rw slyons/pelican-docker:latest ls -la && make publish

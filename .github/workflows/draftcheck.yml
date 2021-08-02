@@ -18,4 +18,4 @@ jobs:
       - name: List files
         run: echo $PWD && ls -la
       - name: Build MOTW docs
-        run: mkdir output && make dockerpub
+        run: docker run --rm -v $(PWD):/home/app/pdock:rw slyons/pelican-docker:latest make publish

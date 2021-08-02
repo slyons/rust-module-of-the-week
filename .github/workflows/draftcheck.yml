@@ -1,0 +1,19 @@
+name: Check RMOTW draft
+
+on:
+  push:
+    branches: [ draft ]
+    paths:
+      - 'content/**'
+      - 'themes/**'
+      - 'pelicanconf.py'
+      - 'publish.conf'
+      - 'requirements.txt'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build MOTW docs
+      run: make dockerpub

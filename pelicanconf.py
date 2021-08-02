@@ -14,7 +14,7 @@ RELATIVE_URLS= True
 THEME = 'themes/pelican-rusted-theme'
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ['webassets', 'neighbors', 'series', "liquid_tags", "show_source"]
+PLUGINS = ['webassets', 'neighbors', 'series', "liquid_tags", "interlinks"]
 
 TIMEZONE = 'America/New_York'
 
@@ -53,6 +53,16 @@ MARKDOWN = {
         "markdown.extensions.extra": {},
         "markdown.extensions.fenced_code": {},
         "markdown.extensions.admonition": {},
+        'markdown_link_attr_modifier': {
+            'new_tab': 'external_only',
+            'no_referrer': 'external_only',
+            'auto_title': 'on',
+        },
     },
     "output_format": "html5",
+}
+
+INTERLINKS = {
+    'src' : SOURCE_URL+"/",
+    'rdoc': lambda r: "https://doc.rust-lang.org/stable/" + r.replace("::", "/") + ".html"
 }

@@ -97,6 +97,9 @@ cargocheck:
 
 cargoclippy:
 	cd rmotw && cargo clippy --all-targets --all-features
+	
+cargotest:
+	cd rmotw && cargo test --all-targets --all-features
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)

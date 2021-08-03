@@ -19,4 +19,4 @@ jobs:
       - name: Install python requirements
         run: pip install -r requirements.txt
       - name: Build documents
-        run: make html
+        run: SASS_BIN=./node_modules/sass/sass.js make html

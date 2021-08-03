@@ -2,7 +2,7 @@ name: Published content build
 
 on:
   push:
-    push: [ main ]
+    branches: [ main ]
     paths-ignore:
       - rmotw/**
 

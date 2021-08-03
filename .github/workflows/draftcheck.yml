@@ -14,8 +14,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-
-      - name: List files
-        run: echo $PWD && ls -la
-      - name: Build MOTW docs
-        run: docker run --rm -v ${{ github.workspace }}:/home/app/pdock:rw slyons/pelican-docker:latest env  && make publish
+      - name: Install sass
+        run: npm install sass
+      - name: Install python requirements
+        run: pip install -r requirements.txt
+      - name: Build documents
+        run: make html

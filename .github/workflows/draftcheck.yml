@@ -17,7 +17,7 @@ jobs:
       - name: Install sass
         run: npm install sass
       - name: List files
-        run: ls -la 
+        run: ls -la node_modules
       - name: Install python requirements
         run: pip install -r requirements.txt
       - name: Build documents

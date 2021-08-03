@@ -1,19 +1,22 @@
-name: Check RMOTW draft
+name: Draft content build
 
 on:
   push:
     branches: [ draft ]
-    paths:
-      - 'content/**'
-      - 'themes/**'
-      - 'pelicanconf.py'
-      - 'publish.conf'
-      - 'requirements.txt'
+    paths-ignore:
+      - rmotw/**
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Build MOTW docs
-      run: make dockerpub
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Install sass
+        run: sudo npm install -g sass
+      - name: Install python requirements
+        run: pip install -r requirements.txt
+      - name: Build documents
+        run: make html

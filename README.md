@@ -1,6 +1,15 @@
 # [Rust Module of the Week](https://motw.rs)
 A weekly dive into commonly used modules in the Rust ecosystem, with story flavor!
 
+### Build status
+
+* Release
+    - [![Rust examples](https://github.com/slyons/rust-module-of-the-week/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/slyons/rust-module-of-the-week/actions/workflows/rust.yml)
+    - [![Content](https://github.com/slyons/rust-module-of-the-week/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/slyons/rust-module-of-the-week/actions/workflows/publish.yml)
+* Draft
+    - [![Rust examples](https://github.com/slyons/rust-module-of-the-week/actions/workflows/rust.yml/badge.svg?branch=draft)](https://github.com/slyons/rust-module-of-the-week/actions/workflows/rust.yml)
+    - [![Content](https://github.com/slyons/rust-module-of-the-week/actions/workflows/draftcheck.yml/badge.svg?branch=draft)](https://github.com/slyons/rust-module-of-the-week/actions/workflows/draftcheck.yml)
+
 ## The goal
 
 The goal of this project is to bring the same concept as [PyMOTW](https://pymotw.com/3/) to the Rust world. PyMOTW was an invaluable resource for me when I was learning Python years ago, and I hope that I can help someone in a similar way. Each week we'll dive into a module and explore some of the functionality that we can find there while following along the adventures of some colourful characters.

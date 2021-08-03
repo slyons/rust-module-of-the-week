@@ -1,22 +1,25 @@
-name: Build RMOTW
+name: Published content build
 
 on:
   push:
-    pull_request: [ main ]
-    paths:
-      - 'content/**'
-      - 'themes/**'
-      - 'pelicanconf.py'
-      - 'publish.conf'
-      - 'requirements.txt'
+    branches: [ main ]
+    paths-ignore:
+      - rmotw/**
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    #if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     steps:
-    - uses: actions/checkout@v2
-    - name: Build MOTW docs
-      run: make dockerpub
-    - name: Publish docs
-      run: make github
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Install sass
+        run: sudo npm install -g sass
+      - name: Install python requirements
+        run: pip install -r requirements.txt
+      - uses: sterlingwes/gh-pages-deploy-action@v1.1
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          source-directory: output
+          build-command: make publish

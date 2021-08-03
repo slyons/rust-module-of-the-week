@@ -1,4 +1,4 @@
-name: Build RMOTW
+name: Published content build
 
 on:
   push:

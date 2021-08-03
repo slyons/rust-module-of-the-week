@@ -1,4 +1,4 @@
-name: Check RMOTW draft
+name: Draft content build
 
 on:
   push:

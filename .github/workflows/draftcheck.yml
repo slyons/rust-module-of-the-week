@@ -15,10 +15,8 @@ jobs:
         with:
           submodules: true
       - name: Install sass
-        run: npm install sass
-      - name: List files
-        run: ls -la node_modules/sass
+        run: sudo npm install -g sass
       - name: Install python requirements
         run: pip install -r requirements.txt
       - name: Build documents
-        run: SASS_BIN=./node_modules/sass/sass.js make html
+        run: SASS_BIN=sass.js make html

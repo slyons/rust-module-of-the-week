@@ -37,11 +37,8 @@ fn main() -> io::Result<()> {
 
     // Filtering files in a directory
     let just_photos = entries.iter()
-        .map(|entry| (entry, fs::metadata(entry)))
-        .filter(|(_entry, meta)| {
-            meta.as_ref().map_or(false, |meta| meta.is_file())
-        })
-        .map(|(entry, meta)| (entry, meta.unwrap()))
+        .filter_map(|entry| Some((entry, fs::metadata(entry).ok()?)))
+        .filter(|(_, meta)| meta.is_file())
         .collect::<Vec<_>>();
 
     println!("There are {} actual files.", just_photos.len());

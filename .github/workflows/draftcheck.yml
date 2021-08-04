@@ -18,6 +18,20 @@ jobs:
         run: sudo npm install -g sass && pip install -r requirements.txt
       - name: Build documents
         run: make html
+      - name: Compress output
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r draft-output.zip output
+      - uses: actions/upload-artifact@v2
+        with:
+          name: draft-output.zip
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: draft-output.zip
       - name: Draft release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -25,5 +39,4 @@ jobs:
           automatic_release_tag: draft
           prerelease: true
           draft: true
-          files: |
-            output
+          files: draft-output.zip

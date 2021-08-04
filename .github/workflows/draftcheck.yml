@@ -22,8 +22,8 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: latest
-          prerelease: false
+          automatic_release_tag: draft
+          prerelease: true
           draft: true
           files: |
-            output/**
+            output

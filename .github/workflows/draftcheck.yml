@@ -5,6 +5,7 @@ on:
     branches: [ draft ]
     paths-ignore:
       - rmotw/**
+      - .github/**
 
 jobs:
   build:

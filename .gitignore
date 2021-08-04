@@ -10,8 +10,11 @@ Cargo.lock
 **/*.rs.bk
 
 .python-version
+__pycache__
 
 *.pyc
 cache
 .webassets-cache
 output/*
+**/rmotw.iml
+**/.idea

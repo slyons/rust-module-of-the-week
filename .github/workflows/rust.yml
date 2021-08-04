@@ -2,9 +2,10 @@ name: Rust examples
 
 on:
   push:
-    branches: [ draft ]
+    branches: [ draft, main ]
     paths-ignore:
       - '!rmotw/**'
+      - '.github/**'
   pull_request:
     branches: [ main ]
     paths-ignore:

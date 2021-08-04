@@ -18,6 +18,10 @@ The goal of this project is to bring the same concept as [PyMOTW](https://pymotw
 
 I have always found that I learn better when there's a story behind something I'm learning, a purpose. I've looked at my fair share of documentation but I've found that a lot of code samples can be hard to follow without broader context. So I've decided that every issue will include the story of one or more characters and their problems that only Rust can solve.
 
+## Examples
+
+See the [examples README](./rmotw/README.md) for how to run them.
+
 ## Contributing
 
-Feel free to fork and open Pull Requests about any past or potential future content! I would especially welcome any code feedbacks as I'm sure there'll be lots of chances to improve my code.
+Feel free to fork and open Pull Requests about any past or potential future content! I would especially welcome any code feedbacks as I'm sure there'll be lots of chances to improve my code. A proper development guide is planned.

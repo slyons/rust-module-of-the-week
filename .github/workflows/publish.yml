@@ -1,4 +1,4 @@
-name: Published content build
+name: Content Build (main)
 
 on:
   push:
@@ -14,12 +14,22 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: Install sass
-        run: sudo npm install -g sass
-      - name: Install python requirements
-        run: pip install -r requirements.txt
-      - uses: sterlingwes/gh-pages-deploy-action@v1.1
+      - name: Install requirements
+        run: sudo npm install -g sass && pip install -r requirements.txt
+      - name: Public release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          source-directory: output
-          build-command: make publish
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          draft: false
+          files: |
+            output/**
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: output
+          clean: true
+          clean-exclude: |
+            CNAME
+            .nojekyll

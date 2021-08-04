@@ -1,4 +1,4 @@
-name: Draft content build
+name: Content Build (draft)
 
 on:
   push:
@@ -14,9 +14,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: Install sass
-        run: sudo npm install -g sass
-      - name: Install python requirements
-        run: pip install -r requirements.txt
+      - name: Install requirements
+        run: sudo npm install -g sass && pip install -r requirements.txt
       - name: Build documents
         run: make html
+      - name: Draft release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          draft: true
+          files: |
+            output/**

@@ -16,3 +16,5 @@ __pycache__
 cache
 .webassets-cache
 output/*
+**/rmotw.iml
+**/.idea

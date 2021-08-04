@@ -2,7 +2,7 @@ name: Rust examples
 
 on:
   push:
-    branches: [ draft ]
+    branches: [ draft, main ]
     paths-ignore:
       - '!rmotw/**'
   pull_request:

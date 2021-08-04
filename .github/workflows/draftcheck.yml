@@ -24,14 +24,15 @@ jobs:
           args: zip -qq -r draft-output.zip output
       - uses: actions/upload-artifact@v2
         with:
-          name: draft-output.zip
+          name: draft-output
+          path: draft-output.zip
   release:
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: draft-output.zip
+          name: draft-output
       - name: Draft release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:

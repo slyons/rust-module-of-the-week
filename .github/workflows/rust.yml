@@ -5,6 +5,7 @@ on:
     branches: [ draft, main ]
     paths-ignore:
       - '!rmotw/**'
+      - '.github'
   pull_request:
     branches: [ main ]
     paths-ignore:

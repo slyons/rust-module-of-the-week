@@ -18,4 +18,5 @@ cache
 output/*
 **/rmotw.iml
 **/.idea
-rmotw/images
+**/.DS_Store
+rmotw/images*

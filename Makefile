@@ -96,10 +96,10 @@ cargocheck:
 	cd rmotw && cargo check --all-targets --all-features
 
 cargoclippy:
-	cd rmotw && cargo clippy --all-targets --all-features
+	cd rmotw && cargo clippy --all-targets --all-features -- -D clippy::all
 	
 cargotest:
-	cd rmotw && cargo test --all-targets --all-features
+	cd rmotw && cargo test --all-targets --all-features -- -D clippy::all
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)

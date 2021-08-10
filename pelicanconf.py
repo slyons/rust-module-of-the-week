@@ -50,6 +50,7 @@ try to solve their problems using the most commonly used modules available to Ru
 }
 
 LIQUID_TAGS = ["include_code"]
+CODE_DIR = "../rmotw"
 
 MARKDOWN = {
     "extension_configs": {
@@ -68,7 +69,7 @@ MARKDOWN = {
 
 def make_rdoc(r):
     link = "https://doc.rust-lang.org/stable/" + r.replace("::", "/")
-    if r.endswith(".html"):
+    if ".html" in r:
         return link
     else:
         return link + ".html"

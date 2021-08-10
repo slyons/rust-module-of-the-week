@@ -53,11 +53,11 @@ fn group_files_by_date(paths: Vec<PathBuf>) ->
     io::Result<BTreeMap<RudgalDate, HashSet<PathBuf>>>
 {
     let mut result = BTreeMap::new();
-    paths.clone().into_iter()
+    paths.into_iter()
         .for_each(|p| {
             let modified = fs::metadata(&p).and_then(|m| m.modified()).unwrap();
             let map = result.entry(systime_to_tuple(modified))
-                .or_insert(HashSet::new());
+                .or_insert_with(HashSet::new);
             map.insert(p);
         });
     Ok(result)
@@ -132,7 +132,7 @@ fn main() -> io::Result<()> {
     let image_link_dest = PathBuf::from(image_link_dest);
     let image_dest = PathBuf::from(image_dest);
     
-    let files = iter_dirs(&Path::new(image_source))?;
+    let files = iter_dirs(Path::new(image_source))?;
     let files_count = files.len();
     println!("There are {} images!", files_count);
 

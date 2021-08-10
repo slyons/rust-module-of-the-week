@@ -97,8 +97,6 @@ fn copy_files(copy_root: &Path, files: &BTreeMap<RudgalDate, HashSet<PathBuf>>)
         println!("Removing directory {:?} and everything below it", copy_root);
         fs::remove_dir_all(&copy_root)?;
     }
-    println!("Creating directory {:?}", copy_root);
-    fs::create_dir_all(&copy_root)?;
 
     let mut copy_root = copy_root.to_path_buf();
     for (date, date_files) in files {
@@ -107,7 +105,10 @@ fn copy_files(copy_root: &Path, files: &BTreeMap<RudgalDate, HashSet<PathBuf>>)
             // Ensure the destination exists already!
             fs::create_dir_all(&copy_root)?;
             copy_root.push(file.file_name().and_then(|f|f.to_str()).unwrap());
+
+            // Copy from the original to the newly-sorted path
             fs::copy(file, &copy_root)?;
+            
             copy_root.pop();
         }
         copy_root.pop();

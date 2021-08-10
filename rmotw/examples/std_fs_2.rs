@@ -132,7 +132,7 @@ fn main() -> io::Result<()> {
     let image_link_dest = PathBuf::from(image_link_dest);
     let image_dest = PathBuf::from(image_dest);
     
-    let files = iter_dirs(&Path::new(image_source))?;
+    let files = iter_dirs(Path::new(image_source))?;
     let files_count = files.len();
     println!("There are {} images!", files_count);
 
